@@ -1,20 +1,57 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { Button, ScrollView, StyleSheet, Text, View } from "react-native";
+import RenderHTML from "react-native-render-html";
 
 export default function App() {
+  const source = {
+    html: `
+      <h2>test1</h2>
+      <p>뛰노는 인간은 피어나기 그림자는 이성은 목숨이 역사를 평화스러운 피부가 철환하였는가? 있는 있음으로써 그들은 하는 청춘의 쓸쓸한 되려니와, 그들에게 원질이 끓는다. 하는 굳세게 그러므로 심장의 대고, 인간은 그들에게 되려니와, 없으면 칼이다. 밥을 하여도 인생을 것이다. 고동을 따뜻한 심장은 피가 속잎나고, 것이다. 아니한 없는 가는 피가 아니다. 투명하되 구할 커다란 천지는 어디 끓는 철환하였는가? 같으며, 현저하게 석가는 하였으며, 끓는 뭇 이것은 뿐이다. 있는 남는 못할 철환하였는가? 부패를 대고, 인간의 밥을 아름다우냐?
+
+      그들은 꽃 풀밭에 뜨고, 목숨을 그들을 그들은 것이다. 어디 거친 과실이 용기가 있는 청춘이 뜨거운지라, 교향악이다. 할지라도 이것은 끓는 교향악이다. 그들에게 피부가 청춘의 찾아 끝에 부패뿐이다. 천고에 가치를 청춘은 석가는 끝까지 듣는다. 뼈 피가 따뜻한 이성은 천자만홍이 평화스러운 창공에 싶이 것이다. 살았으며, 지혜는 가치를 위하여, 살 동력은 피가 보라. 기관과 속에 뼈 투명하되 것이다. 황금시대를 고동을 설산에서 품에 우리는 석가는 원대하고, 되려니와, 위하여서. 얼음에 그들은 시들어 인간의 너의 않는 우는 있으랴? 만천하의 능히 있는 불어 싸인 생생하며, 위하여 쓸쓸한 것이다.
+      
+      간에 찾아다녀도, 인간의 창공에 있는 약동하다. 어디 산야에 원대하고, 피는 옷을 모래뿐일 이것이다. 황금시대의 얼마나 이상은 인간이 품었기 열매를 그림자는 구하지 그러므로 있으랴? 고동을 넣는 하여도 그림자는 것이다. 보는 방황하였으며, 살 위하여 위하여서, 때문이다. 부패를 이상이 그러므로 풀밭에 우리 운다. 얼마나 미인을 그들은 설산에서 곧 어디 뿐이다. 그들은 인생의 희망의 기관과 그들에게 찬미를 피가 역사를 사라지지 것이다. 피고, 노래하며 풀밭에 때문이다.</p>
+
+      <h2>test2</h2>
+      <p>뛰노는 인간은 피어나기 그림자는 이성은 목숨이 역사를 평화스러운 피부가 철환하였는가? 있는 있음으로써 그들은 하는 청춘의 쓸쓸한 되려니와, 그들에게 원질이 끓는다. 하는 굳세게 그러므로 심장의 대고, 인간은 그들에게 되려니와, 없으면 칼이다. 밥을 하여도 인생을 것이다. 고동을 따뜻한 심장은 피가 속잎나고, 것이다. 아니한 없는 가는 피가 아니다. 투명하되 구할 커다란 천지는 어디 끓는 철환하였는가? 같으며, 현저하게 석가는 하였으며, 끓는 뭇 이것은 뿐이다. 있는 남는 못할 철환하였는가? 부패를 대고, 인간의 밥을 아름다우냐?
+
+      그들은 꽃 풀밭에 뜨고, 목숨을 그들을 그들은 것이다. 어디 거친 과실이 용기가 있는 청춘이 뜨거운지라, 교향악이다. 할지라도 이것은 끓는 교향악이다. 그들에게 피부가 청춘의 찾아 끝에 부패뿐이다. 천고에 가치를 청춘은 석가는 끝까지 듣는다. 뼈 피가 따뜻한 이성은 천자만홍이 평화스러운 창공에 싶이 것이다. 살았으며, 지혜는 가치를 위하여, 살 동력은 피가 보라. 기관과 속에 뼈 투명하되 것이다. 황금시대를 고동을 설산에서 품에 우리는 석가는 원대하고, 되려니와, 위하여서. 얼음에 그들은 시들어 인간의 너의 않는 우는 있으랴? 만천하의 능히 있는 불어 싸인 생생하며, 위하여 쓸쓸한 것이다.
+      
+      간에 찾아다녀도, 인간의 창공에 있는 약동하다. 어디 산야에 원대하고, 피는 옷을 모래뿐일 이것이다. 황금시대의 얼마나 이상은 인간이 품었기 열매를 그림자는 구하지 그러므로 있으랴? 고동을 넣는 하여도 그림자는 것이다. 보는 방황하였으며, 살 위하여 위하여서, 때문이다. 부패를 이상이 그러므로 풀밭에 우리 운다. 얼마나 미인을 그들은 설산에서 곧 어디 뿐이다. 그들은 인생의 희망의 기관과 그들에게 찬미를 피가 역사를 사라지지 것이다. 피고, 노래하며 풀밭에 때문이다.</p>
+    `,
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+      >
+        <RenderHTML source={source} tagsStyles={tagsStyles} />
+      </ScrollView>
+      <Button onPress={() => {}} title="Next Step" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    paddingHorizontal: 16,
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
+
+const tagsStyles = {
+  body: {
+    color: "red",
+    fontSize: 16,
+  },
+  p: {
+    fontWeight: "bold",
+    fontSize: 14,
+    color: "black",
+  },
+};
