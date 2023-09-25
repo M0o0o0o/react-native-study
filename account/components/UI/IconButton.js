@@ -1,6 +1,9 @@
 import { Pressable, StyleSheet, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
+/**
+ * 이런 식으로 Pressable과 view와 Ionicons를 이용해서 Custom Button을 만들 수 있다.
+ */
 function IconButton({ icon, size, color, onPress }) {
   return (
     <Pressable
@@ -24,6 +27,7 @@ const styles = StyleSheet.create({
     marginVertical: 2,
   },
   pressed: {
+    // 아이폰과 안드로이드의 pressed 스타일이 다르다
     opacity: 0.75,
   },
 });

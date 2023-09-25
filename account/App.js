@@ -77,6 +77,7 @@ export default function App() {
               component={ExpensesOverview}
               options={{ headerShown: false }}
             />
+            {/*  */}
             <Stack.Screen
               name="ManageExpense"
               component={ManageExpenses}
@@ -90,3 +91,6 @@ export default function App() {
     </>
   );
 }
+/**
+ * 공통 모듈은 분리  ** !!
+ */
