@@ -37,7 +37,7 @@ export default function App() {
 
   return (
     <>
-      <StatusBar style="light" />
+      <Statu sBar style="light" />
       <View style={styles.appConatiner}>
         <Button
           title="Add new Goal"
