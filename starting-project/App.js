@@ -37,13 +37,14 @@ export default function App() {
 
   return (
     <>
-      <Statu sBar style="light" />
+      <StatusBar style="light" />
       <View style={styles.appConatiner}>
         <Button
           title="Add new Goal"
           color="#ffffff"
           onPress={startAddGoalHandler}
         />
+        {/* modalVisible */}
         {modalVisible && (
           <GoalInput
             onAddGoal={addGoalHandler}
